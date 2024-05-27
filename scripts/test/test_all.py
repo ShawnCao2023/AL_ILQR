@@ -56,7 +56,7 @@ def get_ego_states():
 NPC_start = np.array([[15, 2.5, 0, 0]])
 # 障碍物的 trajectory
 NPC_traj = NPC_start.T
-NPC_vel = 5.0
+NPC_vel = 0.0
 for i in range(0, args.horizon):
     NPC_start[0][0] += NPC_vel*args.timestep
     NPC_traj = np.hstack((NPC_traj, NPC_start.T))
@@ -72,8 +72,8 @@ for i in range(0, 60):
 # boundary
 bound1 = -0.5
 bound2 = 5.0
-polyline1 = [Point(0, bound1), Point(50, bound1)]
-polyline2 = [Point(0, bound2), Point(50, bound2)]
+polyline1 = [Point(0, bound1), Point(60, bound1)]
+polyline2 = [Point(0, bound2), Point(60, bound2)]
 polylines = [polyline1, polyline2]
 navigation_agent = iLQR(args, car_dims, polylines)
 navigation_agent.set_global_plan(np.array(plan_ilqr))

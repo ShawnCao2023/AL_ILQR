@@ -26,7 +26,8 @@ class iLQR():
         self.global_plan = None
         self.local_planner = LocalPlanner(args)
         self.vehicle_model = Model(args)
-
+        self.bound1 = polylines[0]
+        self.bound2 = polylines[1]
         self.constraints = Constraints(args, obstacle_bb, polylines)
 
         # initial nominal trajectory
@@ -165,6 +166,10 @@ class iLQR():
         self.ax2.clear()
         self.ax2.axis('equal')
         self.ax2.plot(ref_traj[:, 0], ref_traj[:, 1], color='r', label='Ref Traj')
+        self.ax2.plot([self.bound1[0].x, self.bound1[1].x], [
+                      self.bound1[0].y, self.bound1[1].y], 'b', label='Bound')
+        self.ax2.plot([self.bound2[0].x, self.bound2[1].x], [
+                      self.bound2[0].y, self.bound2[1].y], 'b')
         npc_x = self.obstacle_bb[0]
         npc_y = self.obstacle_bb[1]
         for i in range(npc_traj.shape[1]):
