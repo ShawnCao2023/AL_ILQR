@@ -14,7 +14,7 @@ def add_arguments(parser):
 
 
     # ___________________ Planning Parameters ___________________ #
-    parser.add_argument('--number_of_local_wpts', type= int, default=20, help='Number of local waypoints')
+    parser.add_argument('--number_of_local_wpts', type= int, default=200, help='Number of local waypoints')
     parser.add_argument('--poly_order', type= int, default=5, help='Order of the polynomial to fit on')
     parser.add_argument('--use_pid', action="store_true", default=False, help='If we want to use PID instead of iLQR')
     parser.add_argument('--desired_speed', type= float, default=5.0, help='Desired Speed')
@@ -69,5 +69,8 @@ def add_arguments(parser):
     parser.add_argument('--ego_lf', type=float, default=1.47, help="Distance to front tire")
     parser.add_argument('--ego_lr', type=float, default=1.47, help="Distance to rear tire")
 
+    # ___________________ Linear Cosntrains Parameters ___________________ #
 
-    
+    parser.add_argument('--use_linear_constrains', type=bool, default=False, help='Use linear constraints')
+    parser.add_argument('--mu', type=float, default=1.0, help='Augmented Lagrange multiplier param mu')
+    parser.add_argument('--lambda_star', type=float, default=10.0, help='Augmented Lagrange multiplier param mu factor')

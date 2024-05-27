@@ -19,3 +19,4 @@ npc_traj = np.random.random_sample((4,10))
 l, q = ob.get_obstacle_cost_derivatives(npc_traj, 2, np.array([0.1, 2.0, 0.1, 0.1]))
 
 print(l)
+print(q)
