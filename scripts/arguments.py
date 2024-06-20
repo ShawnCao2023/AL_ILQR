@@ -17,7 +17,7 @@ def add_arguments(parser):
     parser.add_argument('--number_of_local_wpts', type= int, default=200, help='Number of local waypoints')
     parser.add_argument('--poly_order', type= int, default=5, help='Order of the polynomial to fit on')
     parser.add_argument('--use_pid', action="store_true", default=False, help='If we want to use PID instead of iLQR')
-    parser.add_argument('--desired_speed', type= float, default=5.0, help='Desired Speed')
+    parser.add_argument('--desired_speed', type= float, default=10.0, help='Desired Speed')
     parser.add_argument('--use_mpc', action="store_true", default=False, help='To use or not to use (MPC)')
     parser.add_argument('--mpc_horizon', type=int, default=5, help='For how many timesteps to use MPC')
 

@@ -53,10 +53,11 @@ def get_ego_states():
                            [0,              0,                  0]])
     return ego_states
 
-NPC_start = np.array([[15, 2.5, 0, 0]])
 # 障碍物的 trajectory
+NPC_vel = 10.0
+NPC_start = np.array([[15, 2.5, NPC_vel, 0]])
 NPC_traj = NPC_start.T
-NPC_vel = 0.0
+
 for i in range(0, args.horizon):
     NPC_start[0][0] += NPC_vel*args.timestep
     NPC_traj = np.hstack((NPC_traj, NPC_start.T))
