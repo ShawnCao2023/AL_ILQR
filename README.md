@@ -1,3 +1,20 @@
+# AL-iLQR
+## How to Run
+
+Go to `AL-ILQR/Constrained_ILQR/scripts/test`
+
+and
+
+```
+python test_all.py
+```
+## Test
+Feel free to change the parameters in `arguments.py` for example the desired speed of ego vehicle.
+
+Also you can change the behavior of agent, for example, the default agent speed `NPC_vel`  is 0, you can set it to a none 0 value.
+
+Have fun!
+
 # CILQR
 Implements a Constrained Iterative LQR controller for an Autonomous Vehicle.<br/>
 Implemented an iterative Linear
